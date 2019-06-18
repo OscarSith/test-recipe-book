@@ -10,9 +10,9 @@
 </div>
 <div class="row">
   <div class="col-sm-12">
-    <div class="btn-group" role="group">
+    <div class="btn-group" role="group" (appDropdown)="isOpen = $event">
       <button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Manage Recipe</button>
-      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" [ngClass]="{'show':isOpen}">
         <a class="dropdown-item" href="#">To Shopping list</a>
         <a class="dropdown-item" href="#">Edit Recipe</a>
         <a class="dropdown-item" href="#">Delete Recipe</a>
