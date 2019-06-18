@@ -8,10 +8,8 @@
   <div class="col-sm-12">
     <div class="list-group">
       <app-recipe-item 
-        [dataRecipe]="recipe" 
-        *ngFor="let recipe of recipes"
-        (recipeSelected)="onRecipeSelected(recipe)"
-      ></app-recipe-item>
+        *ngFor="let recipeEl of recipes"
+        [recipe]="recipeEl"></app-recipe-item>
     </div>
   </div>
 </div>
