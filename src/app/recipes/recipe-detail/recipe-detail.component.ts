@@ -12,15 +12,17 @@ export class RecipeDetailComponent implements OnInit {
 
   recipe: Recipe;
   isOpen = false;
+  index: number;
 
   constructor(private recipeService: RecipeService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
     // Como params.id es string, se le agrega el signo de (+) para pasarlo a numerico
-    this.route.params.subscribe((params: Params) =>
-      this.recipe = this.recipeService.getRecipeByIndex(+params.id)
-    );
+    this.route.params.subscribe((params: Params) => {
+      this.index = +params.id;
+      this.recipe = this.recipeService.getRecipeByIndex(this.index);
+    });
   }
 
   onAddShoppingList() {
