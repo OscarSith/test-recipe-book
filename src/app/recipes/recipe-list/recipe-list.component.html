@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row"> 
   <div class="col">
     <button class="btn btn-success">New Recipe</button>
   </div>
@@ -10,7 +10,7 @@
       <app-recipe-item 
         *ngFor="let recipeEl of recipes; let i = index"
         [recipe]="recipeEl"
-        (click)="onRecipeSelect(i)"></app-recipe-item>
+        [index]="i"></app-recipe-item>
     </div>
   </div>
 </div>
