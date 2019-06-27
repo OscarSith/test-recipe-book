@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../recipe.services';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -15,7 +15,8 @@ export class RecipeDetailComponent implements OnInit {
   index: number;
 
   constructor(private recipeService: RecipeService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     // Como params.id es string, se le agrega el signo de (+) para pasarlo a numerico
@@ -27,5 +28,10 @@ export class RecipeDetailComponent implements OnInit {
 
   onAddShoppingList() {
     this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
+
+  onDelete() {
+    this.recipeService.deleteRecipe(this.index);
+    this.router.navigate(['/recipes']);
   }
 }

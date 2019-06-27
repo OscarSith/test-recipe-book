@@ -15,7 +15,7 @@
       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" [ngClass]="{'show':isOpen}">
         <a class="dropdown-item" (click)="onAddShoppingList()" style="cursor: pointer">To Shopping list</a>
         <a class="dropdown-item" routerLink="edit">Edit Recipe</a>
-        <a class="dropdown-item">Delete Recipe</a>
+        <a class="dropdown-item" (click)="onDelete()">Delete Recipe</a>
       </div>
     </div>
   </div>
