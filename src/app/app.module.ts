@@ -23,6 +23,7 @@ import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
 import { RecipesModule } from './recipes/recipes.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,6 @@ import { RecipesModule } from './recipes/recipes.module';
     HeaderComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
-    DropdownDirective,
     SigninComponent,
     SignupComponent
   ],
@@ -39,7 +39,8 @@ import { RecipesModule } from './recipes/recipes.module';
     FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    RecipesModule
+    RecipesModule,
+    SharedModule
   ],
   providers: [ShoppinglistService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
