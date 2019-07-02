@@ -22,20 +22,15 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth/auth-guard.service';
+import { RecipesModule } from './recipes/recipes.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
     ShoppingListComponent,
     ShoppingEditComponent,
     DropdownDirective,
-    RecipeStartComponent,
-    RecipeEditComponent,
     SigninComponent,
     SignupComponent
   ],
@@ -43,8 +38,8 @@ import { AuthGuard } from './auth/auth-guard.service';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    RecipesModule
   ],
   providers: [ShoppinglistService, RecipeService, DataStorageService, AuthService, AuthGuard],
   bootstrap: [AppComponent]
